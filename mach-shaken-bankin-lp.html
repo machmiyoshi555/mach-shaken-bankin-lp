@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マッハ車検 愛知三好店｜車検だけじゃない！鈑金修理もマッハにお任せ</title>
+<style>
+  :root{
+    --yellow:#ffd400;
+    --black:#1a1a1a;
+    --red:#e8341c;
+    --gray:#f5f5f5;
+    --darkgray:#555;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:var(--black);
+    background:#fff;
+    line-height:1.7;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 16px;}
+
+  /* Header */
+  header.topbar{
+    background:var(--black);
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 16px;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  header.topbar .logo{font-weight:bold;font-size:1.1rem;color:var(--yellow);}
+  header.topbar .tel{font-size:1.3rem;font-weight:bold;}
+  header.topbar .tel span{font-size:0.7rem;display:block;color:#ccc;font-weight:normal;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,#222 0%,#000 100%);
+    color:#fff;
+    text-align:center;
+    padding:50px 16px 60px;
+  }
+  .hero .badge{
+    display:inline-block;
+    background:var(--yellow);
+    color:var(--black);
+    font-weight:bold;
+    padding:6px 18px;
+    border-radius:20px;
+    font-size:0.9rem;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:1.9rem;
+    margin:0 0 10px;
+    line-height:1.4;
+  }
+  .hero h1 .accent{color:var(--yellow);}
+  .hero p.sub{font-size:1rem;color:#ddd;margin-bottom:28px;}
+  .hero .price-callout{
+    font-size:2.2rem;
+    font-weight:bold;
+    color:var(--yellow);
+  }
+  .hero .price-callout small{font-size:1rem;color:#fff;display:block;}
+  .cta-btn{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-weight:bold;
+    font-size:1.1rem;
+    padding:16px 40px;
+    border-radius:6px;
+    margin-top:24px;
+    box-shadow:0 4px 0 rgba(0,0,0,0.3);
+  }
+  .cta-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:24px;}
+
+  /* Sections */
+  section{padding:50px 16px;}
+  section.gray{background:var(--gray);}
+  h2.section-title{
+    text-align:center;
+    font-size:1.6rem;
+    margin-bottom:36px;
+    position:relative;
+  }
+  h2.section-title::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:4px;
+    background:var(--red);
+    margin:14px auto 0;
+  }
+
+  /* Worry boxes */
+  .worry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .worry-box{
+    background:#fff;
+    border:2px solid #eee;
+    border-radius:8px;
+    padding:20px;
+    text-align:center;
+    font-weight:bold;
+  }
+
+  /* Price table */
+  .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .price-card{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    text-align:center;
+  }
+  .price-card .label{
+    background:var(--black);
+    color:#fff;
+    padding:12px;
+    font-weight:bold;
+  }
+  .price-card .amount{
+    padding:20px;
+    font-size:1.8rem;
+    font-weight:bold;
+    color:var(--red);
+  }
+  .price-card .amount small{font-size:1rem;color:var(--black);}
+  .price-note{font-size:0.85rem;color:var(--darkgray);text-align:center;margin-top:20px;}
+
+  /* Reasons */
+  .reason{
+    display:flex;
+    gap:24px;
+    margin-bottom:40px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .reason .num{
+    flex:0 0 70px;
+    font-size:2.2rem;
+    font-weight:bold;
+    color:var(--yellow);
+    background:var(--black);
+    width:70px;height:70px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .reason .text h3{margin:0 0 8px;font-size:1.15rem;}
+  .reason .text p{margin:0;color:var(--darkgray);font-size:0.95rem;}
+
+  /* Flow */
+  .flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center;}
+  .flow-card{background:#fff;border-radius:8px;padding:24px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+  .flow-card .step{
+    width:36px;height:36px;border-radius:50%;
+    background:var(--red);color:#fff;font-weight:bold;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 12px;
+  }
+  .flow-card h3{font-size:1rem;margin:0 0 8px;}
+  .flow-card p{font-size:0.85rem;color:var(--darkgray);margin:0;}
+
+  /* FAQ */
+  .faq-item{
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:8px;
+    margin-bottom:14px;
+    padding:18px 20px;
+  }
+  .faq-item .q{font-weight:bold;color:var(--red);margin-bottom:6px;}
+  .faq-item .a{color:var(--darkgray);font-size:0.95rem;}
+
+  /* Store info */
+  .store-card{
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    overflow:hidden;
+  }
+  .store-card iframe{width:100%;height:300px;border:0;}
+  table.store-table{width:100%;border-collapse:collapse;}
+  table.store-table th,table.store-table td{
+    padding:14px 16px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+    font-size:0.95rem;
+  }
+  table.store-table th{
+    width:120px;
+    background:#fafafa;
+    color:var(--darkgray);
+    white-space:nowrap;
+  }
+
+  /* Bottom CTA */
+  .bottom-cta{
+    background:var(--yellow);
+    text-align:center;
+    padding:40px 16px;
+  }
+  .bottom-cta h2{margin:0 0 16px;font-size:1.5rem;}
+  .bottom-cta .tel-big{
+    font-size:2.4rem;
+    font-weight:bold;
+    color:var(--black);
+  }
+  .bottom-cta .tel-big span{display:block;font-size:0.9rem;font-weight:normal;}
+
+  /* Contact form */
+  .contact-form{
+    max-width:600px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    padding:30px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  .contact-form label{
+    display:block;
+    font-weight:bold;
+    margin:18px 0 6px;
+    font-size:0.95rem;
+  }
+  .contact-form label:first-of-type{margin-top:0;}
+  .contact-form .req{
+    background:var(--red);
+    color:#fff;
+    font-size:0.7rem;
+    font-weight:normal;
+    padding:2px 6px;
+    border-radius:4px;
+    margin-left:8px;
+  }
+  .contact-form input,.contact-form textarea{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:1rem;
+    font-family:inherit;
+  }
+  .contact-form input:focus,.contact-form textarea:focus{
+    outline:2px solid var(--yellow);
+    border-color:var(--yellow);
+  }
+  .form-submit{
+    display:block;
+    width:100%;
+    text-align:center;
+    border:none;
+    cursor:pointer;
+    margin-top:24px;
+    font-family:inherit;
+  }
+  .form-note{
+    font-size:0.8rem;
+    color:var(--darkgray);
+    text-align:center;
+    margin-top:14px;
+  }
+
+  footer{
+    background:var(--black);
+    color:#aaa;
+    text-align:center;
+    padding:24px 16px;
+    font-size:0.8rem;
+  }
+
+  @media (max-width:700px){
+    .worry-grid,.price-grid,.flow-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:1.4rem;}
+    .hero .price-callout{font-size:1.7rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">マッハ車検 愛知三好店</div>
+  <a href="tel:0561763555" class="tel">0561-76-3555<span>受付 9:00〜12:00／13:00〜17:00（火・祝休み）</span></a>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">車検だけじゃない！</span>
+    <h1>あ、車キズついた…も<br><span class="accent">マッハ車検</span>にお任せください</h1>
+    <p class="sub">45分のスピード車検でおなじみのマッハ車検は、バンパーのすり傷・へこみなどの<br>鈑金修理もまとめて対応できます。</p>
+    <div class="price-callout">車検のお店だからこそ<small>キズ・へこみも丁寧に対応</small></div>
+    <div class="cta-row">
+      <a href="tel:0561763555" class="cta-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff" style="vertical-align:-4px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2z"/></svg>今すぐ電話で相談
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+    <div class="worry-grid">
+      <div class="worry-box">バンパーのキズを直したら<br>どれくらいかかるかな</div>
+      <div class="worry-box">駐車場でこすってしまった…<br>でも修理屋を探すのが面倒</div>
+      <div class="worry-box">保険の担当者との<br>やりとりが面倒</div>
+    </div>
+  </div>
+</section>
+
+<section class="gray">
+  <div class="wrap">
+    <h2 class="section-title">こんな損傷も対応できます</h2>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="label">バンパーのすり傷</div>
+        <div class="amount">対応可<small>無料見積り</small></div>
+      </div>
+      <div class="price-card">
+        <div class="label">バンパー・ドアのへこみ</div>
+        <div class="amount">対応可<small>無料見積り</small></div>
+      </div>
+      <div class="price-card">
+        <div class="label">フェンダーのキズ</div>
+        <div class="amount">対応可<small>無料見積り</small></div>
+      </div>
+      <div class="price-card">
+        <div class="label">塗装が必要な損傷</div>
+        <div class="amount">対応可<small>無料見積り</small></div>
+      </div>
+    </div>
+    <p class="price-note">※実際の修理内容・料金はお車の状態を確認の上、ご納得いただけるよう無料でお見積りいたします。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">マッハ車検の鈑金が選ばれる理由</h2>
+
+    <div class="reason">
+      <div class="num">1</div>
+      <div class="text">
+        <h3>車検と一緒だから一度で済む</h3>
+        <p>車検の点検時にキズ・へこみも一緒に確認。わざわざ別の鈑金屋さんに行く手間がありません。</p>
+      </div>
+    </div>
+
+    <div class="reason">
+      <div class="num">2</div>
+      <div class="text">
+        <h3>国土交通省指定工場で対応</h3>
+        <p>普段から100項目点検を行う指定工場の設備・体制で鈑金修理も実施。仕上がりの安心感があります。</p>
+      </div>
+    </div>
+
+    <div class="reason">
+      <div class="num">3</div>
+      <div class="text">
+        <h3>事前見積りで納得してから依頼できる</h3>
+        <p>車検同様、鈑金修理も事前にしっかりご説明し、ご納得いただいた上で作業を進めます。</p>
+      </div>
+    </div>
+
+    <div class="reason">
+      <div class="num">4</div>
+      <div class="text">
+        <h3>保険を使った修理もOK</h3>
+        <p>事故などで保険を使う場合も、保険会社とのやり取りを含めて対応いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gray">
+  <div class="wrap">
+    <h2 class="section-title">ご依頼の流れ</h2>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="step">1</div>
+        <h3>お電話 or 来店</h3>
+        <p style="white-space:nowrap;font-size:0.78rem;">気になるキズ・へこみの状態を教えてください。</p>
+      </div>
+      <div class="flow-card">
+        <div class="step">2</div>
+        <h3>無料お見積り</h3>
+        <p style="white-space:nowrap;font-size:0.78rem;">実車を確認のうえ、概算金額をご案内します。</p>
+      </div>
+      <div class="flow-card">
+        <div class="step">3</div>
+        <h3>修理・お渡し</h3>
+        <p>ご納得いただいた上で修理を実施。車検と合わせての作業も可能です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="q">Q. 車検と一緒に鈑金修理もお願いできますか？</div>
+      <div class="a">A. はい、可能です。車検入庫時にご依頼箇所を確認させていただき後日概算見積をお伝えさせていただきます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Q. 修理だけ、車検なしでも対応してもらえますか？</div>
+      <div class="a">A. もちろん対応可能です。お気軽にお電話にてご相談ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Q. 輸入車や年式の古い車でも修理できますか？</div>
+      <div class="a">A. 国産車・輸入車問わずご相談いただけます。まずはお車の状態をお見せください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Q. 保険を使って修理はできますか？</div>
+      <div class="a">A. はい、ご利用中の自動車保険会社にご確認の上、当店での修理をご希望とお伝えください。</div>
+    </div>
+  </div>
+</section>
+
+<section class="gray">
+  <div class="wrap">
+    <h2 class="section-title">店舗情報</h2>
+    <div class="store-card">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d816.150399902042!2d137.0633057797594!3d35.09168590655872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600361e871113cf5%3A0x1563c475fb135620!2z44Oe44OD44OP6LuK5qScIOaEm-efpeS4ieWlveW6lw!5e0!3m2!1sja!2sjp!4v1633660598034!5m2!1sja!2sjp" loading="lazy"></iframe>
+      <table class="store-table">
+        <tr><th>店舗名</th><td>マッハ車検 愛知三好店</td></tr>
+        <tr><th>住所</th><td>〒470-0224 愛知県みよし市三好町中鯰ヶ池83-1</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0561763555">0561-76-3555</a></td></tr>
+        <tr><th>メール</th><td><a href="mailto:mach_miyoshi_555@yahoo.co.jp">mach_miyoshi_555@yahoo.co.jp</a></td></tr>
+        <tr><th>受付時間</th><td>9:00〜12:00 / 13:00〜17:00</td></tr>
+        <tr><th>定休日</th><td>火曜日・祝日</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">メールでのお問い合わせ</h2>
+    <form class="contact-form" action="mailto:mach_miyoshi_555@yahoo.co.jp" method="post" enctype="text/plain">
+      <label for="cf-name">お名前<span class="req">必須</span></label>
+      <input type="text" id="cf-name" name="お名前" required>
+
+      <label for="cf-tel">電話番号</label>
+      <input type="tel" id="cf-tel" name="電話番号">
+
+      <label for="cf-email">メールアドレス<span class="req">必須</span></label>
+      <input type="email" id="cf-email" name="メールアドレス" required>
+
+      <label for="cf-message">お問い合わせ内容（キズ・へこみの場所や状態など）<span class="req">必須</span></label>
+      <textarea id="cf-message" name="お問い合わせ内容" rows="5" required></textarea>
+
+      <button type="submit" class="cta-btn form-submit">送信する</button>
+      <p class="form-note">※送信すると、お使いのメールソフトが開き mach_miyoshi_555@yahoo.co.jp 宛のメールが作成されます。</p>
+    </form>
+  </div>
+</section>
+
+<div class="bottom-cta">
+  <h2>キズ・へこみ、車検のついでにマッハへご相談ください</h2>
+  <a href="tel:0561763555" class="tel-big">0561-76-3555<span>受付 9:00〜12:00／13:00〜17:00（火・祝休み）</span></a>
+  <p style="margin-top:18px;font-size:0.95rem;">メールでのご相談は <a href="mailto:mach_miyoshi_555@yahoo.co.jp" style="text-decoration:underline;">mach_miyoshi_555@yahoo.co.jp</a> へ</p>
+</div>
+
+<footer>
+  &copy; マッハ車検 愛知三好店<br>
+  ※修理内容・お見積りはお車の状態確認後にご案内いたします。
+</footer>
+
+</body>
+</html>
